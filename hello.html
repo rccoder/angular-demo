@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
     <script src="js/controller.js"></script>
-    <title>angular-hello</title>
+    <title ng-bind-template="{{query}}">{{query}}</title>
 </head>
 <body>
     Hello {{'World'}}!
@@ -30,9 +30,13 @@
         <tr>
             <th>row number</th>
         </tr>
-        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5]">
+        <tr ng-repeat="i in [0, 1, 2, 3, 4, 5] | filter:query">
             <td>{{i+1}}</td>
         </tr>
     </table>
+
+    Search: <input type="text" ng-model="query">
+
+    {{query}}
 </body>
 </html>
