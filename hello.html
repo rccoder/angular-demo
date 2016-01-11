@@ -17,11 +17,17 @@
 
     <div ng-controller="ViewsAndTemplates">
         {{peoples.length}}
-        <li ng-repeat="people in peoples">
+        <li ng-repeat="people in peoples | filter:query | orderBy:orderProp">
             {{people.name}}
             <p>{{people.age}}</p>
         </li>
+        Search: <input type="text" ng-model="query">
 
+        Sort by:
+        <select ng-model="orderProp">
+            <option value="name">name</option>
+            <option value="age">age</option>
+        </select>
     </div>
 
     Hello {{test}}!!!
@@ -35,8 +41,7 @@
         </tr>
     </table>
 
-    Search: <input type="text" ng-model="query">
 
-    {{query}}
+
 </body>
 </html>

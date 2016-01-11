@@ -12,6 +12,7 @@ function ViewsAndTemplates($scope) {
             age: 20
         }
     ];
+
+    $scope.orderProp = 'age';
 };
 
-$scope.test = "2222222222222222"
